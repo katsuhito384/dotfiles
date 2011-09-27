@@ -1,0 +1,266 @@
+# .zshrc written by t for 4.3.4 in 20071122
+# vim:enc=utf8:
+
+# ----------------------------------------
+# add below to ~/.bash_profile:
+#
+# if [ -x /usr/bin/zsh ]; then
+#   echo 'exec zsh'
+#   exec /usr/bin/zsh -l
+# else
+#   echo 'exec zsh failed.'
+# fi
+#
+
+# ----------------------------------------
+# env
+if [ $TERM = "cygwin" ]; then
+  export LANG=ja_JP.SJIS
+  export LC_ALL=C
+  export SHELL=/usr/local/bin/zsh
+  export PATH="/java/jdk1.6.0_03/bin:$PATH"
+  export PATH="/cygdrive/f/app/prog/ghc/bin:$PATH"
+else
+  export LANG=ja_JP.UTF-8
+  unset LC_ALL
+  export LC_MESSAGES=C
+  export SHELL=`which zsh`
+  export PATH="/usr/bin:$HOME/bin:$PATH"
+fi
+
+#if [ -x `which lv` ]; then
+#  export PAGER=lv
+#elif [ -x `which less` ]; then
+#  export PAGER=less
+#fi
+
+export EDITOR=vim
+
+# C-wで単語の一部と見なす記号
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
+# svn
+export rep=file:///var/svn/
+
+# ----------------------------------------
+# aliases
+setopt completealiases
+if [ $TERM = "cygwin" ]; then
+  alias ls='ls --show-control-chars --color=always -F'
+  alias l='ls --show-control-chars --color=always -FAl'
+  export LV='-Os -c'
+else
+  case $(uname) in
+  'Linux')
+    alias ls='ls --color=auto -Fh'
+    alias l='ls --color=auto -FAlh'
+    ;;
+  'FreeBSD')
+    alias ls='ls -GFh'
+    alias l='ls -GFAlh'
+    export LSCOLORS='ExfxcxdxBxegedabagacad'
+    ;;
+  'Darwin')
+    alias ls='ls -GFh'
+    alias l='ls -GFAlh'
+    ;;
+  esac
+  export LV='-Ou8 -c'
+fi
+alias mv='mv -i'
+alias quit='exit'
+alias w3m='w3m -O ja_JP.UTF-8'
+# for function cd
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd ...'
+alias ....='cd ....'
+# shortcuts
+alias -g ...='../../'
+alias -g ....='../../../'
+alias -g .....='../../../../'
+alias x='exit'
+alias a='./a.out'
+alias man='man'
+alias jman="LC_MESSAGES=$LANG man"
+alias -g F='| grep -i'
+alias -g GG='| xargs -0 grep -i'
+alias -g G='| grep -i'
+alias -g L='| lv'
+#alias rdesktop='rdesktop -g 1500x1100'
+# ----------------------------------------
+# functions
+function cd { 
+  builtin cd $@
+  if [ 21 -ge $(ls|wc|awk '{print $1}') ]; then
+   ls
+  fi
+}
+
+function gd {
+  dirs -v
+  echo -n "select: "
+  read nd
+  if [ "$nd" != "" ]; then
+    cd +"$nd"
+  fi
+}
+
+function backup {
+  D=`pwd|sed -r 's/^.*\/(.*?)$/\1/'`
+  F=${D}_`date +%Y%m%d_%H%M`.tar.gz
+  if [ -f 'Makefile' ]; then make clean; fi
+  builtin cd ..
+  tar zcvf ${F} $D
+  builtin cd -
+  echo "saved: ${F}"
+}
+
+# ----------------------------------------
+# keybinds
+bindkey -e
+bindkey '^[[1~' beginning-of-line # Home
+bindkey '^[[4~' end-of-line # End
+bindkey '^T' kill-word
+bindkey '^U' backward-kill-line
+bindkey '^[[3~' delete-char-or-list # Del
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+
+# ----------------------------------------
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+SAVEHIST=20000
+setopt appendhistory
+setopt histignorealldups
+setopt histnofunctions
+setopt histnostore
+setopt histreduceblanks
+setopt share_history
+setopt hist_ignore_all_dups hist_save_nodups
+
+# ----------------------------------------
+# zsh
+setopt noclobber # 存在するファイルにリダイレクトしない
+setopt autocd
+setopt autopushd
+setopt pushdignoredups
+setopt ignoreeof # C-Dでログアウトしない
+setopt print_eightbit # multibyte characters
+setopt noflowcontrol # C-S C-Q
+
+# ----------------------------------------
+# hooks
+function chpwd() {
+  print -Pn "\e]2;%~ [%m]\a"
+}
+
+# ----------------------------------------
+# prompt
+autoload -U colors
+colors
+local C_PRE="%{$fg[cyan]%}"
+local C_CMD="%{$reset_color%}%{$fg[white]%}"
+local C_RIGHT="%{$bg[black]%}%{$fg[white]%}"
+local C_DEFAULT="%{$reset_color%}"
+if [ $TERM = "cygwin" ]; then
+  # for Cygwin (ps 1.11)
+  function joblist { ps|awk '/^S/{print gensub(/^.*\/(.*?)$/,"\\1", "", $9);}'|sed ':a;$!N;$!b a;;s/\n/,/g' }
+  function jobnum { ps|awk '/^S/{print}'|wc -l}
+else
+  # for Linux (procps 3.2.6)
+  function joblist { ps -l|awk '/^..T/&&NR!=1{print $14}'|sed ':a;$!N;$!b a;;s/\n/,/g' }
+  function jobnum { ps -l|awk '/^..T/&&NR!=1{print}'|wc -l}
+fi
+function precmd {
+  local jn=$(jobnum)
+  if [[ "$jn" -gt 0 ]]; then
+    prompt "[$jn] "`joblist`
+  else
+    prompt ''
+  fi
+}
+function prompt {
+  PROMPT=$C_PRE"%S[%n@%m] %~ %s "$1"
+"$C_PRE"%# "
+}
+prompt ""
+RPROMPT="%S"$C_RIGHT" %D{%d %a} %* %s"$C_CMD
+POSTEDIT=`echotc se`
+setopt prompt_subst # 色
+unsetopt promptcr
+
+# ----------------------------------------
+# completion
+autoload -U compinit
+compinit -u
+
+# ls, colors in completion
+export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=1;31:bd=46;34:cd=43;34:su=41;30:tw=42;30:ow=43;30'
+#zstyle ':completion:*' list-colors 'di=1;34' 'ln=35' 'so=32' 'ex=1;31' 'bd=46;34'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:default' menu select=1 # C-P/C-N
+setopt nolistbeep # 曖昧補完でビープしない
+setopt autolist # 補完時にリスト表示
+setopt listtypes
+unsetopt menucomplete # 最初から候補を循環する
+setopt automenu # 共通部分を補完しそれ以外を循環する準備
+setopt extendedglob # 展開で^とか使う
+setopt numericglobsort # 数字展開は数値順
+
+setopt autoparamkeys # 補完後の:,)を削除
+fignore=(.o .swp) # 補完で無視する
+
+# ssh
+function print_known_hosts() {
+  if [ -f $HOME/.ssh/known_hosts ]; then
+    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+  fi
+}
+_cache_hosts=($(print_known_hosts))
+
+# 補完の種類
+compctl -c man where
+compctl -o setopt
+compctl -s '$(setopt)' unsetopt # 設定されているオプション
+compctl -v vared unset export
+compctl -g '*(-/)' cd
+compctl -b bindkey
+compdef -d java
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補間の際に小文字->大文字に変換（逆はしない）
+
+_cache_hosts=(localhost $HOST)
+
+# ls on single Enter
+function lsoraccept() {
+  if [ -z "$BUFFER" ]; then
+    echo
+    if [ $(/bin/ls|wc -l) -eq 0 ]; then
+      # ls -AF --color=always
+      ls
+    else
+      # ls -F --color=always
+      ls
+    fi
+    echo
+    zle reset-prompt
+  else
+    zle accept-line
+    zle reset-prompt
+  fi
+}
+zle -N lsoraccept
+bindkey '^M' lsoraccept
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#export JRHOME=/home/isi/bessho/JR/trunk/master/
+
+#source /opt/ros/unstable/setup.zsh
+#export ROS_PACKAGE_PATH=~/ros:/opt/ros/unstable/stacks
+export PATH=/opt/local/bin/:$PATH
+
+# for Skype4Py
+export PYTHONPATH=/Library/Python/2.6/site-packages:$PYTHONPATH
+export VERSIONER_PYTHON_PREFER_32_BIT=yes
