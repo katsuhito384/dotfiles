@@ -324,3 +324,6 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
+" appended on 09282011 edit .vimrc immediately
+nnoremap <SPACE>. :<C-u>edit $MYVIMRC<CR>
+nnoremap <SPACE>s. :<C-u>source $MYVIMRC<CR>
