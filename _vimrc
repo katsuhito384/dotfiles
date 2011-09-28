@@ -216,6 +216,8 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'gmarik/vundle'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rails'
+Bundle 'rails.vim'
+Bundle 'matrix.vim--Yang'
 filetype plugin indent on
 
 "Unite.vim
@@ -335,3 +337,6 @@ let $PATH = $PATH . ':/opt/local/bin'
 " rails.vim
 let g:rails_level=4
 let g:rails_default_file="app/controllers/application.rb"
+
+" matrix.vim
+nnoremap <silent> <space>m :<C-u>Matrix<CR>
