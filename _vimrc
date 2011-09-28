@@ -237,4 +237,19 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q))))
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+function! Scouter(file,...) 
+ let pat = '^\s*$\|^\s*"'
+ let lines = readfile(a:file)
+ if !a:0 || !a:1
+   let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
+ endif
+ return len(filter(lines,'v:val !~ pat'))
+endfunction
+command! -bar -bang -nargs=? -complete=file Scouter
+\ echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
+
+"edit .vimrc immediately
+nnoremap <SPACE>. :<C-u>edit $MYVIMRC<CR>
+nnoremap <SPACE>s. :<C-u>source $MYVIMRC<CR>
