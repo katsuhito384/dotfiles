@@ -15,7 +15,8 @@ if has("syntax")
 
   " 256color settings
   if &term=='xterm-256color'
-   " colorscheme orangeocean256
+  " colorscheme orangeocean256
+    colorscheme elflord
 	highlight Normal ctermbg=none
   else
     colorscheme ron
@@ -227,7 +228,7 @@ nnoremap <silent> <space>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
 nnoremap <silent> <space>ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> <space>um :<C-u>Unite file_mru<CR>
+nnoremap <silent> <space>um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 " 常用セット
 nnoremap <silent> <space>uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
@@ -327,3 +328,10 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " appended on 09282011 edit .vimrc immediately
 nnoremap <SPACE>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <SPACE>s. :<C-u>source $MYVIMRC<CR>
+
+" w3m
+let $PATH = $PATH . ':/opt/local/bin'
+
+" rails.vim
+let g:rails_level=4
+let g:rails_default_file="app/controllers/application.rb"
