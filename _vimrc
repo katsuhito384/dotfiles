@@ -218,6 +218,17 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rails'
 Bundle 'rails.vim'
 Bundle 'matrix.vim--Yang'
+Bundle 'ZenCoding.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'html5.vim'
+Bundle 'CSS3-Highlights'
+Bundle 'YankRing.vim'
+Bundle 'Changed'
+Bundle 'colorize'
+Bundle 'ruby.vim'
+Bundle 'ruby-matchit'
+Bundle 'surround.vim'
+Bundle 'eregex.vim'
 filetype plugin indent on
 
 "Unite.vim
@@ -354,3 +365,6 @@ function! Scouter(file, ...)
     \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
     command! -bar -bang -nargs=? -complete=file GScouter
     \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
+
+" vim-ref 10012011
+let g:ref_alc_encoding = 'Shift-JIS'
