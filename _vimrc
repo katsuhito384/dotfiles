@@ -222,7 +222,6 @@ Bundle 'ZenCoding.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'html5.vim'
 Bundle 'CSS3-Highlights'
-Bundle 'YankRing.vim'
 Bundle 'Changed'
 Bundle 'colorize'
 Bundle 'ruby.vim'
@@ -368,3 +367,5 @@ function! Scouter(file, ...)
 
 " vim-ref 10012011
 let g:ref_alc_encoding = 'Shift-JIS'
+let g:ref_alc_start_linenumber = '45'
+nnoremap <silent> <space>a :<C-u>Ref<SPACE>alc<SPACE>
