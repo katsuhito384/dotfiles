@@ -218,6 +218,16 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rails'
 Bundle 'rails.vim'
 Bundle 'matrix.vim--Yang'
+Bundle 'ZenCoding.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'html5.vim'
+Bundle 'CSS3-Highlights'
+Bundle 'Changed'
+Bundle 'colorize'
+Bundle 'ruby.vim'
+Bundle 'ruby-matchit'
+Bundle 'surround.vim'
+Bundle 'eregex.vim'
 filetype plugin indent on
 
 "Unite.vim
@@ -371,4 +381,6 @@ function! Scouter(file, ...)
 " vim-ref
 let g:ref_alc_cmd = 'w3m -dump %s'
 let g:ref_alc_use_cache = 1
-
+let g:ref_alc_encoding = 'Shift-JIS'
+let g:ref_alc_start_linenumber = '45'
+nnoremap <silent> <space>a :<C-u>Ref<SPACE>alc<SPACE>
