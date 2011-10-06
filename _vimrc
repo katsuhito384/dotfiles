@@ -6,9 +6,6 @@ if has("syntax")
   syntax on
 
   "highlight LineNr ctermfg=darkyellow guifg=darkyellow
-  highlight NonText ctermfg=darkgrey gui=NONE guifg=darkcyan
-  highlight Folded ctermfg=blue
-  highlight SpecialKey cterm=underline ctermfg=darkgrey guifg=darkcyan
 
   highlight Cursor ctermbg=darkyellow guibg=darkyellow
   highlight CursorIM ctermbg=red guibg=red
@@ -24,6 +21,9 @@ if has("syntax")
     highlight CursorColumn cterm=none ctermbg=darkgrey guibg=black
   endif
 
+  highlight NonText ctermfg=darkgrey gui=NONE guifg=darkcyan
+  highlight Folded ctermfg=blue
+  highlight SpecialKey cterm=underline ctermfg=darkgrey guifg=darkcyan
   " カレントウィンドウにのみ罫線を引く
   augroup cch
     autocmd! cch
@@ -221,7 +221,6 @@ Bundle 'matrix.vim--Yang'
 Bundle 'ZenCoding.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'html5.vim'
-Bundle 'CSS3-Highlights'
 Bundle 'Changed'
 Bundle 'colorize'
 Bundle 'ruby.vim'
