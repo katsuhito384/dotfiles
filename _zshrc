@@ -26,6 +26,7 @@ else
   export LC_MESSAGES=C
   export SHELL=`which zsh`
   export PATH="/usr/bin:$HOME/bin:$PATH"
+  export PATH="/usr/bin/rails:$PATH"
 fi
 
 #if [ -x `which lv` ]; then
@@ -264,3 +265,6 @@ export PATH=/opt/local/bin/:$PATH
 # for Skype4Py
 export PYTHONPATH=/Library/Python/2.6/site-packages:$PYTHONPATH
 export VERSIONER_PYTHON_PREFER_32_BIT=yes
+
+# for RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
