@@ -1,4 +1,5 @@
 # .zshrc written by t for 4.3.4 in 20071122
+#
 # vim:enc=utf8:
 
 # ----------------------------------------
@@ -71,6 +72,8 @@ fi
 alias mv='mv -i'
 alias quit='exit'
 alias w3m='w3m -O ja_JP.UTF-8'
+alias r='rails'
+alias v='vim'
 # for function cd
 alias ~='cd ~'
 alias ..='cd ..'
