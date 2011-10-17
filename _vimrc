@@ -377,6 +377,7 @@ function! Scouter(file, ...)
     command! -bar -bang -nargs=? -complete=file GScouter
     \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
 
+
 " vim-ref
 let g:ref_alc_cmd = 'w3m -dump %s'
 let g:ref_alc_use_cache = 1
