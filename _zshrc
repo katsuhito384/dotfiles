@@ -1,7 +1,4 @@
 # .zshrc written by t for 4.3.4 in 20071122
-#
-# vim:enc=utf8:
-
 # ----------------------------------------
 # add below to ~/.bash_profile:
 #
@@ -262,7 +259,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 #source /opt/ros/unstable/setup.zsh
 #export ROS_PACKAGE_PATH=~/ros:/opt/ros/unstable/stacks
-export PATH=/opt/local/bin/:$PATH
+export PATH=/opt/local/bin/:/usr/local/:$PATH
 
 # for Skype4Py
 export PYTHONPATH=/Library/Python/2.6/site-packages:$PYTHONPATH
