@@ -1,7 +1,5 @@
 # .zshrc written by t for 4.3.4 in 20071122
 #
-# vim:enc=utf8:
-
 # ----------------------------------------
 # add below to ~/.bash_profile:
 #
@@ -27,7 +25,7 @@ else
   export LC_MESSAGES=C
   export SHELL=`which zsh`
   export PATH="/usr/bin:$HOME/bin:$PATH"
-  export PATH="/usr/bin/rails:$PATH"
+  export PATH="/usr/bin/rails:/usr/local/bin/:/usr/local/:$PATH"
 fi
 
 #if [ -x `which lv` ]; then
