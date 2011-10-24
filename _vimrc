@@ -12,9 +12,9 @@ if has("syntax")
 
   " 256color settings
   if &term=='xterm-256color'
-  " colorscheme orangeocean256
+    " colorscheme orangeocean256
     colorscheme elflord
-	highlight Normal ctermbg=none
+    highlight Normal ctermbg=none
   else
     colorscheme ron
     highlight CursorLine cterm=underline ctermbg=darkgrey guibg=black
@@ -231,8 +231,8 @@ filetype plugin indent on
 
 "Unite.vim
 " 入力モードで開始する
- let g:unite_enable_start_insert=1
- " バッファ一覧
+let g:unite_enable_start_insert=1
+" バッファ一覧
 nnoremap <silent> <space>ub :<C-u>Unite buffer<CR>
 " ファイル一覧
 nnoremap <silent> <space>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -256,15 +256,15 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 function! Scouter(file,...) 
- let pat = '^\s*$\|^\s*"'
- let lines = readfile(a:file)
- if !a:0 || !a:1
-   let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
- endif
- return len(filter(lines,'v:val !~ pat'))
+  let pat = '^\s*$\|^\s*"'
+  let lines = readfile(a:file)
+  if !a:0 || !a:1
+    let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
+  endif
+  return len(filter(lines,'v:val !~ pat'))
 endfunction
 command! -bar -bang -nargs=? -complete=file Scouter
-\ echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
+      \ echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q))))
 
@@ -285,14 +285,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+  let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -341,7 +341,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
-	let g:neocomplcache_omni_patterns = {}
+  let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
@@ -365,17 +365,17 @@ nnoremap <silent> <space>m :<C-u>Matrix<CR>
 
 " vim Scounter
 function! Scouter(file, ...)
-    let pat = '^\s*$\|^\s*"'
-    let lines = readfile(a:file)
-    if !a:0 || !a:1
+  let pat = '^\s*$\|^\s*"'
+  let lines = readfile(a:file)
+  if !a:0 || !a:1
     let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
-    endif
-    return len(filter(lines,'v:val !~ pat'))
-    endfunction
-    command! -bar -bang -nargs=? -complete=file Scouter
-    \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
-    command! -bar -bang -nargs=? -complete=file GScouter
-    \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
+  endif
+  return len(filter(lines,'v:val !~ pat'))
+endfunction
+command! -bar -bang -nargs=? -complete=file Scouter
+      \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
+command! -bar -bang -nargs=? -complete=file GScouter
+      \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
 
 
 " vim-ref
