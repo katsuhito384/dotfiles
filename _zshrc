@@ -1,15 +1,3 @@
-# .zshrc written by t for 4.3.4 in 20071122
-# ----------------------------------------
-# add below to ~/.bash_profile:
-#
-# if [ -x /usr/bin/zsh ]; then
-#   echo 'exec zsh'
-#   exec /usr/bin/zsh -l
-# else
-#   echo 'exec zsh failed.'
-# fi
-#
-
 # ----------------------------------------
 # env
 if [ $TERM = "cygwin" ]; then
