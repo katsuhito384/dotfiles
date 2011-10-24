@@ -49,19 +49,19 @@ if [ $TERM = "cygwin" ]; then
   export LV='-Os -c'
 else
   case $(uname) in
-  'Linux')
-    alias ls='ls --color=auto -Fh'
-    alias l='ls --color=auto -FAlh'
-    ;;
-  'FreeBSD')
-    alias ls='ls -GFh'
-    alias l='ls -GFAlh'
-    export LSCOLORS='ExfxcxdxBxegedabagacad'
-    ;;
-  'Darwin')
-    alias ls='ls -GFh'
-    alias l='ls -GFAlh'
-    ;;
+    'Linux')
+      alias ls='ls --color=auto -Fh'
+      alias l='ls --color=auto -FAlh'
+      ;;
+    'FreeBSD')
+      alias ls='ls -GFh'
+      alias l='ls -GFAlh'
+      export LSCOLORS='ExfxcxdxBxegedabagacad'
+      ;;
+    'Darwin')
+      alias ls='ls -GFh'
+      alias l='ls -GFAlh'
+      ;;
   esac
   export LV='-Ou8 -c'
 fi
@@ -91,29 +91,29 @@ alias -g L='| lv'
 # ----------------------------------------
 # functions
 function cd { 
-  builtin cd $@
-  if [ 21 -ge $(ls|wc|awk '{print $1}') ]; then
-   ls
-  fi
+builtin cd $@
+if [ 21 -ge $(ls|wc|awk '{print $1}') ]; then
+  ls
+fi
 }
 
 function gd {
-  dirs -v
-  echo -n "select: "
-  read nd
-  if [ "$nd" != "" ]; then
-    cd +"$nd"
-  fi
+dirs -v
+echo -n "select: "
+read nd
+if [ "$nd" != "" ]; then
+  cd +"$nd"
+fi
 }
 
 function backup {
-  D=`pwd|sed -r 's/^.*\/(.*?)$/\1/'`
-  F=${D}_`date +%Y%m%d_%H%M`.tar.gz
-  if [ -f 'Makefile' ]; then make clean; fi
-  builtin cd ..
-  tar zcvf ${F} $D
-  builtin cd -
-  echo "saved: ${F}"
+D=`pwd|sed -r 's/^.*\/(.*?)$/\1/'`
+F=${D}_`date +%Y%m%d_%H%M`.tar.gz
+if [ -f 'Makefile' ]; then make clean; fi
+builtin cd ..
+tar zcvf ${F} $D
+builtin cd -
+echo "saved: ${F}"
 }
 
 # ----------------------------------------
@@ -153,7 +153,7 @@ setopt noflowcontrol # C-S C-Q
 # ----------------------------------------
 # hooks
 function chpwd() {
-  print -Pn "\e]2;%~ [%m]\a"
+print -Pn "\e]2;%~ [%m]\a"
 }
 
 # ----------------------------------------
@@ -174,15 +174,15 @@ else
   function jobnum { ps -l|awk '/^..T/&&NR!=1{print}'|wc -l}
 fi
 function precmd {
-  local jn=$(jobnum)
-  if [[ "$jn" -gt 0 ]]; then
-    prompt "[$jn] "`joblist`
-  else
-    prompt ''
-  fi
+local jn=$(jobnum)
+if [[ "$jn" -gt 0 ]]; then
+  prompt "[$jn] "`joblist`
+else
+  prompt ''
+fi
 }
 function prompt {
-  PROMPT=$C_PRE"%S[%n@%m] %~ %s "$1"
+PROMPT=$C_PRE"%S[%n@%m] %~ %s "$1"
 "$C_PRE"%# "
 }
 prompt ""
@@ -215,9 +215,9 @@ fignore=(.o .swp) # 補完で無視する
 
 # ssh
 function print_known_hosts() {
-  if [ -f $HOME/.ssh/known_hosts ]; then
-    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
-  fi
+if [ -f $HOME/.ssh/known_hosts ]; then
+  cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+fi
 }
 _cache_hosts=($(print_known_hosts))
 
@@ -235,21 +235,21 @@ _cache_hosts=(localhost $HOST)
 
 # ls on single Enter
 function lsoraccept() {
-  if [ -z "$BUFFER" ]; then
-    echo
-    if [ $(/bin/ls|wc -l) -eq 0 ]; then
-      # ls -AF --color=always
-      ls
-    else
-      # ls -F --color=always
-      ls
-    fi
-    echo
-    zle reset-prompt
+if [ -z "$BUFFER" ]; then
+  echo
+  if [ $(/bin/ls|wc -l) -eq 0 ]; then
+    # ls -AF --color=always
+    ls
   else
-    zle accept-line
-    zle reset-prompt
+    # ls -F --color=always
+    ls
   fi
+  echo
+  zle reset-prompt
+else
+  zle accept-line
+  zle reset-prompt
+fi
 }
 zle -N lsoraccept
 bindkey '^M' lsoraccept
@@ -267,3 +267,5 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 
 # for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=/usr/local/bin:$PATH
+export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALLBACK_LIBRARY_PATH"

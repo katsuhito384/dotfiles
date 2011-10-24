@@ -351,7 +351,9 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " appended on 09282011 edit .vimrc immediately
 nnoremap <SPACE>. :<C-u>edit $MYVIMRC<CR>
+nnoremap <SPACE>, :<C-u>edit ~/.zshrc<CR>
 nnoremap <SPACE>s. :<C-u>source $MYVIMRC<CR>
+nnoremap <SPACE>s, :<C-u>source ~/.zshrc<CR>
 
 " w3m
 let $PATH = $PATH . ':/opt/local/bin'
