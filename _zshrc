@@ -12,6 +12,7 @@ else
   export LC_MESSAGES=C
   export SHELL=`which zsh`
   export PATH="/usr/bin:$HOME/bin:$PATH"
+  export PATH="/usr/bin/rails:/usr/local/bin/:/usr/local/:$PATH"
 fi
 
 #if [ -x `which lv` ]; then
