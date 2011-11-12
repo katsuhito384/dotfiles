@@ -228,6 +228,7 @@ Bundle 'ruby-matchit'
 Bundle 'surround.vim'
 Bundle 'eregex.vim'
 Bundle 'The-NERD-tree'
+Bundle 'Smooth-Scroll'
 filetype plugin indent on
 
 "Unite.vim
