@@ -174,6 +174,7 @@ cmap <ESC><ESC> <C-C>;noh<CR>
 " YYYYMMDD, YYYYMMDD-HHMM
 inoremap <F5> <C-r>=strftime('%Y%m%d')<CR>
 inoremap <F6> <C-r>=strftime('%Y%m%d-%H%M')<CR>
+inoremap _mail katsuhito384@gmail.com
 imap <c-e> <esc>A
 imap <c-a> <esc>0i
 imap <c-d> <esc>lxi
@@ -185,8 +186,6 @@ imap { {}<esc>i
 imap [ []<esc>i
 imap ( ()<esc>i
 imap ,t ;tabnew
-
-
 
 " return to normal mode and suspend
 inoremap <C-Z> <ESC><C-Z>
@@ -305,7 +304,7 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+" imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
@@ -322,7 +321,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " For cursor moving in insert mode(Not recommended)
 inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
@@ -413,3 +412,5 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "  let g:errormarker_erroricon = expand('~/.vim/signs/err.bmp')
 "  let g:errormarker_warningicon = expand('~/.vim/signs/err.png')
 "endif
+
+
