@@ -228,7 +228,13 @@ Bundle 'ruby-matchit'
 Bundle 'surround.vim'
 Bundle 'eregex.vim'
 Bundle 'The-NERD-tree'
+"Bundle 'statusline.vim'
+Bundle 'fugitive.vim'
+Bundle 'motemen/git-vim'
+Bundle 'errormarker.vim'
 " Bundle 'Smooth-Scroll'
+Bundle 'smartchr'
+Bundle 'taku-o/vim-toggle'
 filetype plugin indent on
 
 "Unite.vim
@@ -388,3 +394,22 @@ let g:ref_alc_use_cache = 1
 let g:ref_alc_encoding = 'Shift-JIS'
 let g:ref_alc_start_linenumber = '45'
 nnoremap <silent> <space>a :<C-u>Ref<SPACE>alc<SPACE>
+
+" statusline.vim
+" let hi_insert = 'hi StatusLine guifg=DarkBule guibg=DarkYellow gui=none ctermfg=Blue ctermbg=Yellow cterm=none'
+
+" fugitive.vim
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" errormarker.vim
+"let g:errormarker_errortext = '!!'
+"let g:errormarker_warningtext = '??'
+"let g:errormarker_errorgroup = 'Error'
+"let g:errormarker_warninggroup = 'Todo'
+"if has('win32') || has('win64')
+"  let g:errormarker_erroricon = expand('~/.vim/signs/err.bmp')
+"  let g:errormarker_warningicon = expand('~/.vim/signs/warn.bmp')
+"else
+"  let g:errormarker_erroricon = expand('~/.vim/signs/err.bmp')
+"  let g:errormarker_warningicon = expand('~/.vim/signs/err.png')
+"endif
