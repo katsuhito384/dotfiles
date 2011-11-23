@@ -413,4 +413,12 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "  let g:errormarker_warningicon = expand('~/.vim/signs/err.png')
 "endif
 
+" smartchr
+inoremap <expr> = smartchr#loop('=', ' = ', ' == ')
+inoremap <expr> . smartchr#loop('.', '->', '...')
 
+" vim-toggle
+:let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'elseif', 'elseif':'else', 'else':'if' }
+
+" neocomplcache quick_match
+imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
