@@ -73,6 +73,8 @@ set laststatus=2
 
 set termencoding=utf-8
 set encoding=utf-8
+" for git commit
+autocmd BufNew,BufRead COMMIT_EDITMSG set enc=utf-8 fenc=utf-8
 " set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
 set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
 set fenc=utf-8
