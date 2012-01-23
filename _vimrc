@@ -229,7 +229,7 @@ Bundle 'ruby-matchit'
 Bundle 'surround.vim'
 Bundle 'eregex.vim'
 Bundle 'The-NERD-tree'
-"Bundle 'statusline.vim'
+" Bundle 'statusline.vim'
 Bundle 'fugitive.vim'
 Bundle 'motemen/git-vim'
 Bundle 'errormarker.vim'
@@ -424,3 +424,4 @@ inoremap <expr> . smartchr#loop('.', '->', '...')
 
 " neocomplcache quick_match
 imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
+
