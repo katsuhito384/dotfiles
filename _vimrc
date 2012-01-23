@@ -236,6 +236,8 @@ Bundle 'errormarker.vim'
 " Bundle 'Smooth-Scroll'
 Bundle 'smartchr'
 Bundle 'taku-o/vim-toggle'
+"Bundle 'snippetsEmu'
+Bundle 'vim-ruby/vim-ruby'
 filetype plugin indent on
 
 "Unite.vim
@@ -332,7 +334,7 @@ inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -355,8 +357,8 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " appended on 09282011 edit .vimrc immediately
 nnoremap <SPACE>. :<C-u>edit $MYVIMRC<CR>
@@ -425,3 +427,15 @@ inoremap <expr> . smartchr#loop('.', '->', '...')
 " neocomplcache quick_match
 imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
 
+" appended on 12182011 quick space in normal mode
+nnoremap <SPACE><SPACE><SPACE> :a<SPACE><ESC>
+
+" appended on 01212012 erb % Completion
+"inoremap <expr> % Lt_Percent_Completion()
+"function! Lt_Percent_Completion()
+"  if matchstr(getline('.'),'.',col('.') -1) == ">"
+"    return "\%\%\<Left>"
+"  else
+"    return "\%"
+"  endif
+"endfunction
