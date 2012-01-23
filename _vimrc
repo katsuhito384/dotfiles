@@ -237,6 +237,7 @@ Bundle 'errormarker.vim'
 Bundle 'smartchr'
 Bundle 'taku-o/vim-toggle'
 "Bundle 'snippetsEmu'
+Bundle 'vim-ruby/vim-ruby'
 filetype plugin indent on
 
 "Unite.vim
@@ -428,3 +429,13 @@ imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
 
 " appended on 12182011 quick space in normal mode
 nnoremap <SPACE><SPACE><SPACE> :a<SPACE><ESC>
+
+" appended on 01212012 erb % Completion
+"inoremap <expr> % Lt_Percent_Completion()
+"function! Lt_Percent_Completion()
+"  if matchstr(getline('.'),'.',col('.') -1) == ">"
+"    return "\%\%\<Left>"
+"  else
+"    return "\%"
+"  endif
+"endfunction
