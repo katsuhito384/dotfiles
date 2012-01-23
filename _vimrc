@@ -10,6 +10,7 @@ if has("syntax")
   highlight Cursor ctermbg=darkyellow guibg=darkyellow
   highlight CursorIM ctermbg=red guibg=red
 
+
   " 256color settings
   if &term=='xterm-256color'
     " colorscheme orangeocean256
@@ -24,6 +25,12 @@ if has("syntax")
   highlight NonText ctermfg=darkgrey gui=NONE guifg=darkcyan
   highlight Folded ctermfg=blue
   highlight SpecialKey cterm=underline ctermfg=darkgrey guifg=darkcyan
+
+  "neocomplcache related 
+  highlight Pmenu ctermbg = 8
+  highlight PmenuSel ctermbg = 2
+  "highlight PmenuSbar ctermbg = 2
+
   " カレントウィンドウにのみ罫線を引く
   augroup cch
     autocmd! cch
@@ -418,7 +425,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "endif
 
 " smartchr
-inoremap <expr> = smartchr#loop('=', ' = ', ' == ')
+inoremap <expr> = smartchr#loop(' = ', ' => ', ' == ','=')
 inoremap <expr> . smartchr#loop('.', '->', '...')
 
 " vim-toggle
