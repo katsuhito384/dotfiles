@@ -245,7 +245,7 @@ Bundle 'smartchr'
 Bundle 'taku-o/vim-toggle'
 "Bundle 'snippetsEmu'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 filetype plugin indent on
 
 "Unite.vim
