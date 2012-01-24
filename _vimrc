@@ -245,6 +245,7 @@ Bundle 'smartchr'
 Bundle 'taku-o/vim-toggle'
 "Bundle 'snippetsEmu'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-coffee-script'
 filetype plugin indent on
 
 "Unite.vim
@@ -325,14 +326,15 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><C-h>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-" inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-y>  neocomplcache#close_popup() : "\<CR>"
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
 
 " For cursor moving in insert mode(Not recommended)
 inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
@@ -341,7 +343,8 @@ inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 " AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
+
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -354,7 +357,7 @@ let g:neocomplcache_enable_auto_select = 1
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
@@ -362,7 +365,7 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 "let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
@@ -425,14 +428,14 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "endif
 
 " smartchr
-inoremap <expr> = smartchr#loop(' = ', ' => ', ' == ','=')
+inoremap <expr> = smartchr#loop('=', ' == ', ' => ',' -> ')
 inoremap <expr> . smartchr#loop('.', '->', '...')
 
 " vim-toggle
 :let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'elseif', 'elseif':'else', 'else':'if' }
 
 " neocomplcache quick_match
-imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
+"imap <C-y> <Plug>(neocomplcache_start_unite_quick_match)
 
 " appended on 12182011 quick space in normal mode
 nnoremap <SPACE><SPACE><SPACE> :a<SPACE><ESC>
