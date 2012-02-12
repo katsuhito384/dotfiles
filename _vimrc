@@ -449,3 +449,10 @@ nnoremap <SPACE><SPACE><SPACE> :a<SPACE><ESC>
 "    return "\%"
 "  endif
 "endfunction
+
+" appended on 01212012 vim-coffee-script
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+
+" appedned on 01242012 quickrun
+let g:quickrun_config={}
+let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
