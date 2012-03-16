@@ -260,7 +260,7 @@ nnoremap <silent> <space>ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> <space>um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 " 常用セット
-nnoremap <silent> <space>uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> <space>uu :<C-u>Unite file buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> <space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 

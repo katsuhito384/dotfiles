@@ -59,6 +59,9 @@ alias quit='exit'
 alias w3m='w3m -O ja_JP.UTF-8'
 alias r='rails'
 alias v='vim'
+alias gad='git add'
+alias gcm='git commit'
+
 # for function cd
 alias ~='cd ~'
 alias ..='cd ..'
