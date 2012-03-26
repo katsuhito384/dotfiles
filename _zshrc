@@ -74,8 +74,9 @@ alias grm='git rm'
 alias gci='git commit'
 alias gcia='git commit -a'
 alias gps='git push;git push --tags'
+alias gpsom='git push origin master'
 alias gpl='git pull;git pull --tag'
-alias gmg='git pull origin'
+alias gplom='git pull origin master'
 alias gco='git checkout'
 
 # for function cd
