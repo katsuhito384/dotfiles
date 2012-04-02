@@ -248,6 +248,7 @@ Bundle 'taku-o/vim-toggle'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/vdbi-vim'
+Bundle 'mattn/webapi-vim'
 filetype plugin indent on
 
 "Unite.vim
