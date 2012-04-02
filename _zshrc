@@ -272,3 +272,5 @@ export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALL
 #  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 #}
 #RPROMPT="%1(v|%F{green}%1v%f|)"
+#
+

@@ -29,7 +29,8 @@ if has("syntax")
   "neocomplcache related 
   highlight Pmenu ctermbg = 8
   highlight PmenuSel ctermbg = 2
-  "highlight PmenuSbar ctermbg = 2
+  highlight PmenuSbar ctermbg = 2
+
 
   " カレントウィンドウにのみ罫線を引く
   augroup cch
