@@ -249,6 +249,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/vdbi-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'sudo.vim'
+Bundle 'commentop.vim'
 filetype plugin indent on
 
 "Unite.vim
