@@ -114,7 +114,7 @@ nmap <ESC><ESC> ;noh<CR>
 "nnoremap k gk
 
 " insert CR
-nnoremap <C-J> o<ESC>j
+" nnoremap <C-J> o<ESC>j
 nnoremap <CR> o<ESC>j
 nnoremap O o<ESC>
 
@@ -329,7 +329,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 " imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+" smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
@@ -475,3 +475,9 @@ let g:Powerline_symbols='fancy'
 
 " ctags
 let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
+
+" CTRL-hjkl for moving windows
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
