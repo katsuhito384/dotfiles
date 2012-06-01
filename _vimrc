@@ -210,7 +210,7 @@ inoremap <C-A> <C-O>I
 
 " fold
 set foldmethod=marker
-set tags=tags
+" set tags=tags
 
 "for vundle
 set nocompatible
@@ -251,6 +251,8 @@ Bundle 'mattn/vdbi-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'sudo.vim'
 Bundle 'commentop.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'taglist.vim'
 filetype plugin indent on
 
 "Unite.vim
@@ -290,7 +292,12 @@ endfunction
 command! -bar -bang -nargs=? -complete=file Scouter
       \ echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q))))
+"au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q))))
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+endfunction
+
 
 " neocomplcache.vim
 " Disable AutoComplPop.
@@ -461,3 +468,10 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 " appedned on 01242012 quickrun
 let g:quickrun_config={}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
+
+" vim-powerline
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+let g:Powerline_symbols='fancy'
+
+" ctags
+let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'

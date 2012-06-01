@@ -13,6 +13,7 @@ else
   export SHELL=`which zsh`
   export PATH="/usr/bin:$HOME/bin:$PATH"
   export PATH="/usr/bin/rails:/usr/local/bin/:/usr/local/:$PATH"
+  export PATH="/usr/local/rvm/gems/ruby-1.->2-p318@global/bin/rake:$PATH"
 fi
 
 #if [ -x `which lv` ]; then
@@ -292,3 +293,7 @@ export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALL
 #}
 #RPROMPT="%1(v|%F{green}%1v%f|)"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# ctags
+alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+export PATH=/usr/local/Cellar/ctags/5.8/bin/ctags:$PATH
