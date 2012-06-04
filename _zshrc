@@ -12,7 +12,7 @@ else
   export LC_MESSAGES=C
   export SHELL=`which zsh`
   export PATH="/usr/bin:$HOME/bin:$PATH"
-  export PATH="/usr/bin/rails:/usr/local/bin/:/usr/local/:$PATH"
+  export PATH="/usr/bin/rails:/usr/local/bin:/usr/local:$PATH"
   export PATH="/usr/local/rvm/gems/ruby-1.->2-p318@global/bin/rake:$PATH"
 fi
 
@@ -270,7 +270,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 #source /opt/ros/unstable/setup.zsh
 #export ROS_PACKAGE_PATH=~/ros:/opt/ros/unstable/stacks
-export PATH=/opt/local/bin/:/usr/local/:/usr/local/bin/:$PATH
+export PATH=/opt/local/bin:/usr/local:/usr/local/bin:$PATH
 
 # for Skype4Py
 export PYTHONPATH=/Library/Python/2.6/site-packages:$PYTHONPATH
@@ -278,7 +278,7 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 
 # for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-source /etc/profile.d/rvm.sh                                                                                                                                                                                                                                                                                                                                                                                           01 日 10:54:9
+#source /etc/profile.d/rvm.sh                                                                                                                                                                                                                                                                                                                                                                                           01 日 10:54:9
 export PATH=/usr/local/bin:$PATH
 export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 
