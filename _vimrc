@@ -253,6 +253,13 @@ Bundle 'sudo.vim'
 Bundle 'commentop.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
+
+" tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
+Bundle 'Source-Explorer-srcexpl.vim'
+
+" minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
+Bundle 'minibufexpl.vim'
+
 filetype plugin indent on
 
 "Unite.vim
@@ -481,3 +488,20 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+"自動でプレビューを表示する。TODO:うざくなってきたら手動にする。またはソースを追う時だけ自動に変更する。
+let g:SrcExpl_RefreshTime   = 1
+"プレビューウインドウの高さ
+let g:SrcExpl_WinHeight     = 9
+"tagsは自動で作成する
+let g:SrcExpl_UpdateTags    = 1
+"マッピング
+let g:SrcExpl_RefreshMapKey = "<Space>"
+let g:SrcExpl_GoBackMapKey  = "<C-b>"
+nmap <F8> :SrcExplToggle<CR>
+
+" minibufexpl.vim
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
