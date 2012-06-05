@@ -278,7 +278,7 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 
 # for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#source /etc/profile.d/rvm.sh                                                                                                                                                                                                                                                                                                                                                                                           01 日 10:54:9
+source /etc/profile.d/rvm.sh
 export PATH=/usr/local/bin:$PATH
 export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 
