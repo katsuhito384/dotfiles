@@ -1,0 +1,12 @@
+"----------------------------------------------------------
+" Appearance
+"----------------------------------------------------------
+
+" highlight, incremental
+set hlsearch
+set incsearch
+
+set statusline=\[%n%{bufnr('$')>1?'/'.bufnr('$'):''}%{winnr('$')>1?':'.winnr().'/'.winnr('$'):''}\]\ %<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l/%L,%c%V%8P
+
+set number
+set laststatus=2

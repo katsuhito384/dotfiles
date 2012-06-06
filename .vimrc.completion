@@ -1,0 +1,23 @@
+"----------------------------------------------------------
+" Completion
+"----------------------------------------------------------
+
+" ========================= insert mode
+imap { {}<esc>i
+imap [ []<esc>i
+imap ( ()<esc>i
+imap ,t ;tabnew
+
+" YYYYMMDD, YYYYMMDD-HHMM
+inoremap <F5> <C-r>=strftime('%Y%m%d')<CR>
+inoremap <F6> <C-r>=strftime('%Y%m%d-%H%M')<CR>
+inoremap _mail katsuhito384@gmail.com
+
+" return to normal mode and suspend
+inoremap <C-Z> <ESC><C-Z>
+
+" history size for command or search pattern
+set history=1000
+
+" use neocomplcache for completion
+source ~/dotfiles/.vimrc.completion.neocomplcache

@@ -1,0 +1,114 @@
+"----------------------------------------------------------
+"Basic
+"----------------------------------------------------------
+"
+" filetype specific
+"----------------------------------------------------------
+filetype plugin indent on
+autocmd FileType python set ts=4 sts=4 sw=4 noet noci si ai cinwords=if,elif,else,for,while,try,except,finally,def,class,with indentkeys+=#
+
+
+
+" edit
+"-----------------------------------------------------------
+set backspace=indent,eol,start
+set showmatch " show matching parentheses
+set wildmenu
+set formatoptions+=mM
+set ambiwidth=double " for UTF-8 kigou
+set vb t_vb=
+set showmode
+set noswapfile
+
+" use OS clipboard
+set clipboard+=unnamed
+
+" use mouse in terminal
+set mouse=a
+set ttymouse=xterm2
+
+
+
+set browsedir=current
+set shellslash
+set scrolloff=5
+
+set display=lastline
+
+" omni complete
+"-----------------------------------------------------------
+hi Pmenu guibg=#666666
+hi PmenuSel guibg=#8cd0d3 guifg=#666666
+hi PmenuSbar guibg=#333333
+
+"-----------------------------------------------------------
+" keymaps
+"-----------------------------------------------------------
+
+" ========================= normal mode
+" noh on ESCs
+nmap <ESC><ESC> ;noh<CR>
+
+" graphical j/k (dangerous for scripts)
+"nnoremap j gj
+"nnoremap k gk
+
+" insert CR
+" nnoremap <C-J> o<ESC>j
+nnoremap <CR> o<ESC>j
+nnoremap O o<ESC>
+
+" Ctrl-i help
+nnoremap <C-i>  :<C-u>help<Space>
+" " do 'help' the word under the cursor
+nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>
+
+" save if updated on double Leader
+noremap <Leader><Leader> ;up<CR>
+
+" up/down prev/next => center
+nnoremap <C-I> <C-I>zz
+nnoremap <C-O> <C-O>zz
+
+" yank to line end
+nnoremap Y y$
+
+" exit
+nnoremap QQ ;qa<CR>
+
+" buffer next/prev
+nnoremap <C-N> ;bn<CR>
+nnoremap <C-P> ;bp<CR>
+nnoremap <S-Tab> ;bp<CR>
+
+" window prev (ref: window next: C-W C-W)
+nnoremap <C-W><C-P> <C-W><S-W>
+
+" tab
+nnoremap <C-K>c ;tabnew<CR>
+nnoremap <C-K>d ;tabclose<CR>
+nnoremap <C-K><C-D> ;tabclose<CR>
+nnoremap <C-K>o ;tabonly<CR>
+nnoremap <C-K><C-O> ;tabonly<CR>
+nnoremap <C-K><C-P> gT
+nnoremap <C-K>h gT
+nnoremap <C-K><C-N> gt
+nnoremap <C-K><C-K> gt
+nnoremap <C-K>l gt
+nnoremap <C-Tab> gt
+
+
+" ========================= visual mode
+" select to line end
+vnoremap v $h
+
+" ========================= command mode
+" emacs keymap
+cmap <C-A> <Home>
+cmap <C-E> <End>
+cmap <C-F> <Right>
+cmap <C-B> <Left>
+
+
+
+

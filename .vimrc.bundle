@@ -1,0 +1,54 @@
+"----------------------------------------------------------
+" Import vim-plugins managed under the vundle.vim
+"----------------------------------------------------------
+
+set nocompatible
+filetype off
+
+set rtp+=~/dotfiles/vimfiles/vundle.git/
+call vundle#rc()
+
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+Bundle 'gmarik/vundle'
+Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-rails'
+Bundle 'rails.vim'
+Bundle 'matrix.vim--Yang'
+Bundle 'ZenCoding.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'html5.vim'
+Bundle 'Changed'
+Bundle 'colorize'
+Bundle 'ruby.vim'
+Bundle 'ruby-matchit'
+Bundle 'surround.vim'
+Bundle 'eregex.vim'
+Bundle 'The-NERD-tree'
+" Bundle 'statusline.vim'
+Bundle 'fugitive.vim'
+Bundle 'motemen/git-vim'
+Bundle 'errormarker.vim'
+" Bundle 'Smooth-Scroll'
+Bundle 'smartchr'
+Bundle 'taku-o/vim-toggle'
+"Bundle 'snippetsEmu'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mattn/vdbi-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'sudo.vim'
+Bundle 'commentop.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'taglist.vim'
+
+" tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
+Bundle 'Source-Explorer-srcexpl.vim'
+
+" minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
+Bundle 'minibufexpl.vim'
+
+filetype plugin indent on

@@ -1,0 +1,10 @@
+"----------------------------------------------------------
+" Search
+"----------------------------------------------------------
+
+" search under visual selection
+vnoremap * y/<C-R>"<CR>
+vnoremap # y?<C-R>"<CR>
+
+" noh on ESCs
+cmap <ESC><ESC> <C-C>;noh<CR>
