@@ -313,3 +313,21 @@ export PATH=/usr/local/Cellar/ctags/5.8/bin/ctags:$PATH
 #        screen -rx || screen -D -RR
 #    fi
 #fi
+#
+
+## alias settings
+
+[ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias
+
+case "${OSTYPE}" in
+# Mac(Unix)
+darwin*)
+    # ここに設定
+    [ -f ~/dotfiles/.zshrc.osx ] && source ~/dotfiles/.zshrc.osx
+    ;;
+# Linux
+linux*)
+    # ここに設定
+    [ -f ~/dotfiles/.zshrc.linux ] && source ~/dotfiles/.zshrc.linux
+    ;;
+esac
