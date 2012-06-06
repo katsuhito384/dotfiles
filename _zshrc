@@ -101,7 +101,7 @@ alias -g L='| lv'
 #alias rdesktop='rdesktop -g 1500x1100'
 # ----------------------------------------
 # functions
-function cd { 
+function cd {
 builtin cd $@
 if [ 21 -ge $(ls|wc|awk '{print $1}') ]; then
   ls
@@ -280,6 +280,7 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 #source /etc/profile.d/rvm.sh
 export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/dotfiles/bin
 export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 
 ## vcs_info
