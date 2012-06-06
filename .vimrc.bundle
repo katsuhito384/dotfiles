@@ -2,53 +2,124 @@
 " Import vim-plugins managed under the vundle.vim
 "----------------------------------------------------------
 
-set nocompatible
 filetype off
-
+set nocompatible
 set rtp+=~/dotfiles/vimfiles/vundle.git/
 call vundle#rc()
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'gmarik/vundle'
-Bundle 'mattn/zencoding-vim'
-Bundle 'tpope/vim-rails'
-Bundle 'rails.vim'
-Bundle 'matrix.vim--Yang'
-Bundle 'ZenCoding.vim'
+" ----------------------------------- Edit ------------------------------------------
+
+" NERD_commenter.vim toggle commment by <Leader>c<space>
+Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'The-NERD-Commenter'
+
+" 'co' makes coment toggle
+Bundle 'commentop.vim'
+
+" just putting '=' returns cycle of '='  ' -> ' ,  ' => ' or sth like that
+Bundle 'smartchr'
+
+" surround sth like '' or "" or `` or sth like that
+Bundle 'surround.vim'
+
+" <C-a> toggles true/false etc
+Bundle 'taku-o/vim-toggle'
+
+" ----------------------------------- Completion ------------------------------------
+
+" the existing best plugin for completion
+Bundle 'Shougo/neocomplcache'
+
+" vim implementation for zenconding
+Bundle 'mattn/zencoding-vim'
+Bundle 'ZenCoding.vim'
+
+" ----------------------------------- Searching/Moving-------------------------------
+
+" :%s/perlregex
+Bundle 'eregex.vim'
+
+" smart scroll
+Bundle 'Smooth-Scroll'
+
+" ----------------------------------- Programming -----------------------------------
+
+" look up manuals in vim
+Bundle 'thinca/vim-ref'
+
+" quick-run the file editing right now
+Bundle 'thinca/vim-quickrun'
+
+" rails-plugin for vim
+Bundle 'tpope/vim-rails'
+
+" html5-plugin for vim
 Bundle 'html5.vim'
-Bundle 'Changed'
-Bundle 'colorize'
+
+" ruby-plugin for vim
 Bundle 'ruby.vim'
 Bundle 'ruby-matchit'
-Bundle 'surround.vim'
-Bundle 'eregex.vim'
-Bundle 'The-NERD-tree'
-" Bundle 'statusline.vim'
-Bundle 'fugitive.vim'
-Bundle 'motemen/git-vim'
-Bundle 'errormarker.vim'
-" Bundle 'Smooth-Scroll'
-Bundle 'smartchr'
-Bundle 'taku-o/vim-toggle'
-"Bundle 'snippetsEmu'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mattn/vdbi-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'sudo.vim'
-Bundle 'commentop.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'taglist.vim'
 
-" tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
+" coffee-script-plugin for vim
+Bundle 'kchmck/vim-coffee-script'
+
+" ----------------------------------- Syntax ----------------------------------------
+
+" ----------------------------------- Buffer ----------------------------------------
+
+" minibufexpl.vim : show buffer window like tab-editor
+Bundle 'minibufexpl.vim'
+
+" famous tree-shaped explorer
+Bundle 'The-NERD-tree'
+
+" automatically generate tags file , view and move source files using tgs
 Bundle 'Source-Explorer-srcexpl.vim'
 
-" minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
-Bundle 'minibufexpl.vim'
+" :Tlist shows explore using ctags
+Bundle 'taglist.vim'
+
+" ----------------------------------- Encoding --------------------------------------
+
+" ----------------------------------- Utility ---------------------------------------
+
+" use shell in vim
+Bundle 'Shougo/vimshell'
+
+" :Matrix perform screensaver like matrix
+Bundle 'matrix.vim--Yang'
+
+" git-plugin for vim
+Bundle 'fugitive.vim'
+Bundle 'motemen/git-vim'
+
+" sophisticate the status line
+Bundle 'Lokaltog/vim-powerline'
+
+" use database from vim
+Bundle 'mattn/vdbi-vim'
+
+" edit or save as sudoers in the vim-editor
+Bundle 'sudo.vim'
+
+" ----------------------------------- ColorSchema -----------------------------------
+
+Bundle 'desert256.vim'
+Bundle 'mrkn256.vim'
+Bundle 'tomasr/molokai'
+Bundle 'yuroyoro/yuroyoro256.vim'
+
+" ----------------------------------- Unite -----------------------------------------
+
+" anything plugin like emacs editor implemented by vim-script
+Bundle 'Shougo/unite.vim'
+
+" ----------------------------------- Misc ------------------------------------------
+
+" the plugin-management plugin vundle.vim
+Bundle 'gmarik/vundle'
+
+" -----------------------------------------------------------------------------------
 
 filetype plugin indent on
