@@ -114,6 +114,13 @@ Bundle 'yuroyoro/yuroyoro256.vim'
 
 " anything plugin like emacs editor implemented by vim-script
 Bundle 'Shougo/unite.vim'
+Bundle 'tsukkee/unite-help'
+Bundle 'h1mesuke/unite-outline'
+" Bundle 'Sixeight/unite-grep'
+Bundle 'basyura/unite-rails'
+Bundle 'thinca/vim-unite-history'
+Bundle 'tsukkee/unite-tag'
+" Bundle 'choplin/unite-vim_hacks'
 
 " ----------------------------------- Misc ------------------------------------------
 
