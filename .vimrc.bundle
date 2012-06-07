@@ -20,7 +20,7 @@ Bundle 'commentop.vim'
 Bundle 'smartchr'
 
 " surround sth like '' or "" or `` or sth like that
-Bundle 'surround.vim'
+Bundle 'tpope/vim-surround'
 
 " <C-a> toggles true/false etc
 Bundle 'taku-o/vim-toggle'
@@ -91,7 +91,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'matrix.vim--Yang'
 
 " git-plugin for vim
-Bundle 'fugitive.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'motemen/git-vim'
 
 " sophisticate the status line

@@ -2,6 +2,8 @@
 " Color
 "----------------------------------------------------------
 
+colorscheme yuroyoro256
+
 if has("syntax")
   syntax on
 
@@ -10,14 +12,14 @@ if has("syntax")
   highlight Cursor ctermbg=darkyellow guibg=darkyellow
   highlight CursorIM ctermbg=red guibg=red
 
-
   " 256color settings
   if &term=='xterm-256color'
     " colorscheme orangeocean256
     colorscheme elflord
     highlight Normal ctermbg=none
   else
-    colorscheme ron
+    " colorscheme ron
+    colorscheme yuroyoro256
     highlight CursorLine cterm=underline ctermbg=darkgrey guibg=black
     highlight CursorColumn cterm=none ctermbg=darkgrey guibg=black
   endif
@@ -26,7 +28,7 @@ if has("syntax")
   highlight Folded ctermfg=blue
   highlight SpecialKey cterm=underline ctermfg=darkgrey guifg=darkcyan
 
-  "neocomplcache related 
+  "neocomplcache related
   highlight Pmenu ctermbg = 8
   highlight PmenuSel ctermbg = 2
   highlight PmenuSbar ctermbg = 2
