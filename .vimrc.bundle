@@ -40,7 +40,7 @@ Bundle 'ZenCoding.vim'
 Bundle 'eregex.vim'
 
 " smart scroll
-Bundle 'Smooth-Scroll'
+" Bundle 'Smooth-Scroll'
 
 " ----------------------------------- Programming -----------------------------------
 
@@ -85,7 +85,7 @@ Bundle 'taglist.vim'
 " ----------------------------------- Utility ---------------------------------------
 
 " use shell in vim
-Bundle 'Shougo/vimshell'
+" Bundle 'Shougo/vimshell'
 
 " :Matrix perform screensaver like matrix
 Bundle 'matrix.vim--Yang'
