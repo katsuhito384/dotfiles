@@ -15,7 +15,8 @@ if has("syntax")
   " 256color settings
   if &term=='xterm-256color'
     " colorscheme orangeocean256
-    colorscheme elflord
+    " colorscheme elflord
+    colorscheme yuroyoro256
     highlight Normal ctermbg=none
   else
     " colorscheme ron
