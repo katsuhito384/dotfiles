@@ -25,6 +25,9 @@ Bundle 'tpope/vim-surround'
 " <C-a> toggles true/false etc
 Bundle 'taku-o/vim-toggle'
 
+" combine nerd-tree, src-explore ,  taglist
+Bundle 'trinity.vim'
+
 " ----------------------------------- Completion ------------------------------------
 
 " the existing best plugin for completion
