@@ -29,7 +29,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-function! Scouter(file,...) 
+function! Scouter(file,...)
   let pat = '^\s*$\|^\s*"'
   let lines = readfile(a:file)
   if !a:0 || !a:1
@@ -154,7 +154,17 @@ let g:SrcExpl_GoBackMapKey  = "<C-b>"
 nmap <F8> :SrcExplToggle<CR>
 
 " minibufexpl.vim
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+" The-NERD-Commenter
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 2
+nmap <Leader>/ <Plug>NERDCommenterToggle
+vmap <Leader>/ <Plug>NERDCommenterToggle
+nmap <Leader>/a <Plug>NERDCommenterAppend
+vmap <Leader>/s <Plug>NERDCommenterSexy
+
+
