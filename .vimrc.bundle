@@ -28,6 +28,9 @@ Bundle 'taku-o/vim-toggle'
 " combine nerd-tree, src-explore ,  taglist
 Bundle 'trinity.vim'
 
+" Align : Help folks to align text,  eqns,  declarations,  tables,  etc
+Bundle 'Align'
+
 " ----------------------------------- Completion ------------------------------------
 
 " the existing best plugin for completion
