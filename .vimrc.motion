@@ -25,3 +25,5 @@ nnoremap <C-l> <C-w>l
 " change size of each windows
 nnoremap <C-w><C-h> <C-w><
 nnoremap <C-w><C-l> <C-w>>
+nnoremap <C-w><C-j> <C-w>+
+nnoremap <C-w><C-k> <C-w>-

@@ -19,6 +19,7 @@ set ambiwidth=double " for UTF-8 kigou
 set vb t_vb=
 set showmode
 set noswapfile
+set pastetoggle=<F2>
 
 " use OS clipboard
 set clipboard+=unnamed
@@ -27,12 +28,9 @@ set clipboard+=unnamed
 set mouse=a
 set ttymouse=xterm2
 
-
-
 set browsedir=current
 set shellslash
 set scrolloff=5
-
 set display=lastline
 
 " omni complete
