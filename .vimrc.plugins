@@ -169,11 +169,12 @@ vmap <Leader>/s <Plug>NERDCommenterSexy
 
 " twitvim
 let twitvim_count = 40
-nnoremap ,tp :<C-u>PosttoTwitter<CR>
-nnoremap ,tf :<C-u>FriendsTwitter<CR><C-w>j
-nnoremap ,tu :<C-u>UserTwitter<CR><C-w>j
-nnoremap ,tr :<C-u>RepliesTwitter<CR><C-w>j
-nnoremap ,tn :<C-u>NextTwitter<CR>
+nnoremap <space>tp :<C-u>PosttoTwitter<CR>
+nnoremap <space>tf :<C-u>FriendsTwitter<CR><C-w>j
+nnoremap <space>tu :<C-u>UserTwitter<CR><C-w>j
+nnoremap <space>tr :<C-u>RepliesTwitter<CR><C-w>j
+nnoremap <space>tn :<C-u>NextTwitter<CR>
+nnoremap <space>td :<C-u>DMTwitter<CR>
 
 autocmd FileType twitvim call s:twitvim_my_settings()
 function! s:twitvim_my_settings()
