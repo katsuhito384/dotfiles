@@ -60,7 +60,6 @@ alias quit='exit'
 alias w3m='w3m -O ja_JP.UTF-8'
 alias r='rails'
 alias v='vim'
-alias atomeye='$HOME/Downloads/A.DarwinIntel386'
 
 #for git
 alias gst='git status'

@@ -10,3 +10,4 @@ set statusline=\[%n%{bufnr('$')>1?'/'.bufnr('$'):''}%{winnr('$')>1?':'.winnr().'
 
 set number
 set laststatus=2
+set equalalways
