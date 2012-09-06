@@ -3,6 +3,7 @@
 "----------------------------------------------------------
 
 colorscheme yuroyoro256
+" colorscheme ron
 
 if has("syntax")
   syntax on
@@ -17,6 +18,7 @@ if has("syntax")
     " colorscheme orangeocean256
     " colorscheme elflord
     colorscheme yuroyoro256
+    " colorscheme ron
     highlight Normal ctermbg=none
   else
     " colorscheme ron
