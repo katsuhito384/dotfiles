@@ -5,3 +5,4 @@
 " swap the ';' and ':' keys
 noremap ; :
 noremap : ;
+
