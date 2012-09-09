@@ -75,7 +75,7 @@ Bundle 'kchmck/vim-coffee-script'
 " ----------------------------------- Buffer ----------------------------------------
 
 " minibufexpl.vim : show buffer window like tab-editor
-Bundle 'minibufexpl.vim'
+" Bundle 'minibufexpl.vim'
 
 " famous tree-shaped explorer
 Bundle 'The-NERD-tree'
