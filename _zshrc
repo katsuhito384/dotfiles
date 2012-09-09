@@ -285,6 +285,7 @@ fi
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/dotfiles/bin
 export DYLD_FALLBACK_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 ## vcs_info
 #autoload -Uz vcs_info
