@@ -78,6 +78,7 @@ Bundle 'kchmck/vim-coffee-script'
 " ----------------------------------- Syntax ----------------------------------------
 "
 Bundle 'taq/vim-rspec'
+Bundle 'scrooloose/syntastic'
 
 " ----------------------------------- Buffer ----------------------------------------
 
