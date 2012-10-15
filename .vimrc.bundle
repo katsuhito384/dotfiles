@@ -40,6 +40,8 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'ZenCoding.vim'
 
+Bundle 'tpope/vim-endwise.git'
+
 " ----------------------------------- Searching/Moving-------------------------------
 
 " :%s/perlregex
@@ -47,6 +49,9 @@ Bundle 'eregex.vim'
 
 " smart scroll
 " Bundle 'Smooth-Scroll'
+"
+Bundle 'ruby-matchit'
+Bundle 'vim-scripts/dbext.vim'
 
 " ----------------------------------- Programming -----------------------------------
 
@@ -71,6 +76,9 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 
 " ----------------------------------- Syntax ----------------------------------------
+"
+Bundle 'taq/vim-rspec'
+Bundle 'scrooloose/syntastic'
 
 " ----------------------------------- Buffer ----------------------------------------
 
@@ -127,6 +135,8 @@ Bundle 'basyura/unite-rails'
 Bundle 'thinca/vim-unite-history'
 Bundle 'tsukkee/unite-tag'
 " Bundle 'choplin/unite-vim_hacks'
+Bundle 'ujihisa/unite-rake'
+Bundle 'basyura/unite-rails'
 
 " ----------------------------------- Misc ------------------------------------------
 
