@@ -80,6 +80,7 @@ alias gpl='git pull;git pull --tag'
 alias gplom='git pull origin master'
 alias gco='git checkout'
 alias gmg='git merge'
+alias z='zeus'
 
 # for function cd
 alias ~='cd ~'
