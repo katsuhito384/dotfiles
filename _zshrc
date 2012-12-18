@@ -336,3 +336,7 @@ linux*)
     [ -f ~/dotfiles/.zshrc.linux ] && source ~/dotfiles/.zshrc.linux
     ;;
 esac
+
+export PATH=$PATH:~/Desktop/Desktop2/manabo_Inc/Project/mana.bo/misc/AWS-ElasticBeanstalk-CLI-2.2/eb/macosx/python2.7
+# for node-version-manager
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
