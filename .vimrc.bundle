@@ -79,6 +79,7 @@ Bundle 'kchmck/vim-coffee-script'
 "
 Bundle 'taq/vim-rspec'
 Bundle 'scrooloose/syntastic'
+Bundle 'Better-Javascript-Indentation'
 
 " ----------------------------------- Buffer ----------------------------------------
 
