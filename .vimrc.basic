@@ -82,20 +82,6 @@ nnoremap <S-Tab> ;bp<CR>
 " window prev (ref: window next: C-W C-W)
 nnoremap <C-W><C-P> <C-W><S-W>
 
-" tab
-nnoremap <C-K>c ;tabnew<CR>
-nnoremap <C-K>d ;tabclose<CR>
-nnoremap <C-K><C-D> ;tabclose<CR>
-nnoremap <C-K>o ;tabonly<CR>
-nnoremap <C-K><C-O> ;tabonly<CR>
-nnoremap <C-K><C-P> gT
-nnoremap <C-K>h gT
-nnoremap <C-K><C-N> gt
-nnoremap <C-K><C-K> gt
-nnoremap <C-K>l gt
-nnoremap <C-Tab> gt
-
-
 " ========================= visual mode
 " select to line end
 vnoremap v $h
