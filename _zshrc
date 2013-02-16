@@ -340,3 +340,6 @@ linux*)
 esac
 
 export PATH=$PATH:~/Desktop/Desktop2/manabo_Inc/Project/mana.bo/misc/AWS-ElasticBeanstalk-CLI-2.2/eb/macosx/python2.7
+
+# for tmux-powerline
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'

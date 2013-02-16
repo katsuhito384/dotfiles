@@ -111,6 +111,7 @@ Bundle 'motemen/git-vim'
 
 " sophisticate the status line
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'erikw/tmux-powerline'
 
 " use database from vim
 Bundle 'mattn/vdbi-vim'
