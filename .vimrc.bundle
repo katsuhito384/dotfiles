@@ -1,149 +1,155 @@
-"----------------------------------------------------------
-" Import vim-plugins managed under the vundle.vim
-"----------------------------------------------------------
-
-filetype off
+"----------------------------------------------------
+" neobundle.vim
+"----------------------------------------------------
 set nocompatible
-set rtp+=~/dotfiles/vimfiles/vundle.git/
-call vundle#rc()
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
 " ----------------------------------- Edit ------------------------------------------
 
 " NERD_commenter.vim toggle commment by <Leader>c<space>
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'The-NERD-Commenter'
+NeoBundle 'scrooloose/nerdcommenter.git'
+NeoBundle 'The-NERD-Commenter'
 
 " 'co' makes coment toggle
-Bundle 'commentop.vim'
+NeoBundle 'commentop.vim'
 
 " just putting '=' returns cycle of '='  ' -> ' ,  ' => ' or sth like that
-Bundle 'smartchr'
+NeoBundle 'smartchr'
 
 " surround sth like '' or "" or `` or sth like that
-Bundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 
 " <C-a> toggles true/false etc
-Bundle 'taku-o/vim-toggle'
+NeoBundle 'taku-o/vim-toggle'
 
 " combine nerd-tree, src-explore ,  taglist
-Bundle 'trinity.vim'
+NeoBundle 'trinity.vim'
 
 " Align : Help folks to align text,  eqns,  declarations,  tables,  etc
-Bundle 'Align'
+NeoBundle 'Align'
 
 " ----------------------------------- Completion ------------------------------------
 
 " the existing best plugin for completion
-Bundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-rsense', { 'autoload' : { 'filetypes' : ['ruby'], }, }
+NeoBundle 'Shougo/neosnippet'
 
 " vim implementation for zenconding
-Bundle 'mattn/zencoding-vim'
-Bundle 'ZenCoding.vim'
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'ZenCoding.vim'
 
-Bundle 'tpope/vim-endwise.git'
+NeoBundle 'tpope/vim-endwise.git'
 
 " ----------------------------------- Searching/Moving-------------------------------
 
 " :%s/perlregex
-Bundle 'eregex.vim'
+NeoBundle 'eregex.vim'
 
 " smart scroll
-" Bundle 'Smooth-Scroll'
+" NeoBundle 'Smooth-Scroll'
 "
-Bundle 'ruby-matchit'
-Bundle 'vim-scripts/dbext.vim'
+NeoBundle 'ruby-matchit'
+NeoBundle 'vim-scripts/dbext.vim'
 
 " ----------------------------------- Programming -----------------------------------
 
 " look up manuals in vim
-Bundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-ref'
 
 " quick-run the file editing right now
-Bundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-quickrun'
 
 " rails-plugin for vim
-Bundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rails'
 
 " html5-plugin for vim
-Bundle 'html5.vim'
+NeoBundle 'html5.vim'
 
 " ruby-plugin for vim
-Bundle 'ruby.vim'
-Bundle 'ruby-matchit'
-Bundle 'vim-ruby/vim-ruby'
+NeoBundle 'ruby.vim'
+NeoBundle 'ruby-matchit'
+NeoBundle 'vim-ruby/vim-ruby'
 
 " coffee-script-plugin for vim
-Bundle 'kchmck/vim-coffee-script'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " ----------------------------------- Syntax ----------------------------------------
 "
-Bundle 'taq/vim-rspec'
-Bundle 'scrooloose/syntastic'
-Bundle 'Better-Javascript-Indentation'
+NeoBundle 'taq/vim-rspec'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Better-Javascript-Indentation'
 
 " ----------------------------------- Buffer ----------------------------------------
 
 " minibufexpl.vim : show buffer window like tab-editor
-" Bundle 'minibufexpl.vim'
+" NeoBundle 'minibufexpl.vim'
 
 " famous tree-shaped explorer
-Bundle 'The-NERD-tree'
+NeoBundle 'The-NERD-tree'
 
 " automatically generate tags file , view and move source files using tgs
-Bundle 'Source-Explorer-srcexpl.vim'
+NeoBundle 'Source-Explorer-srcexpl.vim'
 
 " :Tlist shows explore using ctags
-Bundle 'taglist.vim'
+NeoBundle 'taglist.vim'
 
 " ----------------------------------- Encoding --------------------------------------
 
 " ----------------------------------- Utility ---------------------------------------
 
 " use shell in vim
-" Bundle 'Shougo/vimshell'
+" NeoBundle 'Shougo/vimshell'
 
 " :Matrix perform screensaver like matrix
-Bundle 'matrix.vim--Yang'
+NeoBundle 'matrix.vim--Yang'
 
 " git-plugin for vim
-Bundle 'tpope/vim-fugitive'
-Bundle 'motemen/git-vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'motemen/git-vim'
 
 " sophisticate the status line
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'erikw/tmux-powerline'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'erikw/tmux-powerline'
 
 " use database from vim
-Bundle 'mattn/vdbi-vim'
+NeoBundle 'mattn/vdbi-vim'
 
 " edit or save as sudoers in the vim-editor
-Bundle 'sudo.vim'
+NeoBundle 'sudo.vim'
 
 " ----------------------------------- ColorSchema -----------------------------------
 
-Bundle 'desert256.vim'
-Bundle 'mrkn256.vim'
-Bundle 'tomasr/molokai'
-Bundle 'yuroyoro/yuroyoro256.vim'
+NeoBundle 'desert256.vim'
+NeoBundle 'mrkn256.vim'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'yuroyoro/yuroyoro256.vim'
 
 " ----------------------------------- Unite -----------------------------------------
 
 " anything plugin like emacs editor implemented by vim-script
-Bundle 'Shougo/unite.vim'
-Bundle 'tsukkee/unite-help'
-Bundle 'h1mesuke/unite-outline'
-" Bundle 'Sixeight/unite-grep'
-Bundle 'basyura/unite-rails'
-Bundle 'thinca/vim-unite-history'
-Bundle 'tsukkee/unite-tag'
-" Bundle 'choplin/unite-vim_hacks'
-Bundle 'ujihisa/unite-rake'
-Bundle 'basyura/unite-rails'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tsukkee/unite-help'
+NeoBundle 'h1mesuke/unite-outline'
+" NeoBundle 'Sixeight/unite-grep'
+NeoBundle 'basyura/unite-rails'
+NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'tsukkee/unite-tag'
+" NeoBundle 'choplin/unite-vim_hacks'
+NeoBundle 'ujihisa/unite-rake'
+NeoBundle 'basyura/unite-rails'
 
 " ----------------------------------- Misc ------------------------------------------
 
 " the plugin-management plugin vundle.vim
-Bundle 'gmarik/vundle'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
 
 " -----------------------------------------------------------------------------------
 
