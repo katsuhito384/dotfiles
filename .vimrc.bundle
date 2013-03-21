@@ -61,6 +61,7 @@ NeoBundle 'vim-scripts/dbext.vim'
 
 " look up manuals in vim
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'taka84u9/vim-ref-ri'
 
 " quick-run the file editing right now
 NeoBundle 'thinca/vim-quickrun'
@@ -78,6 +79,12 @@ NeoBundle 'vim-ruby/vim-ruby'
 
 " coffee-script-plugin for vim
 NeoBundle 'kchmck/vim-coffee-script'
+
+" autoreload
+NeoBundle 'tell-k/vim-browsereload-mac'
+
+" access to the URL
+NeoBundle 'tyru/open-browser.vim'
 
 " ----------------------------------- Syntax ----------------------------------------
 "
