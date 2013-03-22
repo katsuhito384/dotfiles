@@ -54,7 +54,6 @@ NeoBundle 'eregex.vim'
 " smart scroll
 " NeoBundle 'Smooth-Scroll'
 "
-NeoBundle 'ruby-matchit'
 NeoBundle 'vim-scripts/dbext.vim'
 
 " ----------------------------------- Programming -----------------------------------
