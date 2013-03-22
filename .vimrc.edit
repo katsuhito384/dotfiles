@@ -44,8 +44,8 @@ nmap y0 y^
 "inoremap { {}<LEFT>
 "inoremap [ []<LEFT>
 "inoremap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 "vnoremap { "zdi^V{<C-R>z}<ESC>
 "vnoremap [ "zdi^V[<C-R>z]<ESC>
 "vnoremap ( "zdi^V(<C-R>z)<ESC>
