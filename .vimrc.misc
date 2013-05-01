@@ -6,3 +6,5 @@
 noremap ; :
 noremap : ;
 
+" for crontab -e
+set backupskip=/tmp/*,/private/tmp/*

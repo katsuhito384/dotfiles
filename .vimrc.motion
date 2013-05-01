@@ -28,5 +28,5 @@ nnoremap <C-w><C-l> <C-w>>
 nnoremap <C-w><C-j> <C-w>+
 nnoremap <C-w><C-k> <C-w>-
 
-" tmuxのprefixをC-tに変更していて、タグを戻るのキーバインドのC-tと重複して使えないので、タグを戻るのキーバインドをC-[に変更する。
+" for ctags
 nnoremap <C-[> :pop<CR>
