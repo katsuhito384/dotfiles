@@ -22,7 +22,7 @@ set noswapfile
 set pastetoggle=<F2>
 
 " use OS clipboard
-set clipboard+=unnamed
+" set clipboard+=unnamed
 
 " use mouse in terminal
 set mouse=a
