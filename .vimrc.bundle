@@ -33,6 +33,9 @@ NeoBundle 'trinity.vim'
 " Align : Help folks to align text,  eqns,  declarations,  tables,  etc
 NeoBundle 'Align'
 
+" sync clipboard of mac and yanked data
+NeoBundle 'kana/vim-fakeclip'
+
 " ----------------------------------- Completion ------------------------------------
 
 " the existing best plugin for completion

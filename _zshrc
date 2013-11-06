@@ -300,7 +300,7 @@ fi
 #source /etc/profile.d/rvm.sh
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/dotfiles/bin
-export DYLD_FALLBACK_LIBRARY_PATH="/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+#  export DYLD_FALLBACK_LIBRARY_PATH="/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 #  export DYLD_LIBRARY_PATH="/usr/local/mysql-5.5.28-osx10.6-x86_64/lib:$DYLD_LIBRARY_PATH"
 #  export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
@@ -367,3 +367,25 @@ chmod +x ${AWS_RDS_HOME}
 
 # for RSense
 export RSENSE_HOME=/usr/local/Cellar/rsense/0.3/libexec
+
+# for rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+
+#  eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# for LD_LIBRARY_PATH bug of macosx
+unset LD_LIBRARY_PATH
+unset DYLD_LIBRARY_PATH
+
+# for node
+[[ -s /Users/katsuhito384/.nvm/nvm.sh ]] && . /Users/katsuhito384/.nvm/nvm.sh
+nvm use default
+npm_dir=${NVM_PATH}_modules
+export NODE_PATH=$npm_dir
+
+PATH=$PATH:$HOME/.rvm/src/rvm/bin # Add RVM to PATH for scripting
+
+# for rvm
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
