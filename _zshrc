@@ -63,6 +63,8 @@ alias r='rails'
 alias v='vim'
 alias bi='bundle install'
 alias bx='bundle exec'
+alias bs='bundle show'
+alias bu='bundle update'
 
 #for git
 alias gst='git status'
