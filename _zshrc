@@ -88,6 +88,7 @@ alias gco='git checkout'
 alias gmg='git merge'
 alias gsta='git stash'
 alias ggr='git grep -n'
+alias gpr='git pr'
 alias z='zeus'
 #for git-flow
 alias gffs='git flow feature start'
@@ -389,3 +390,7 @@ PATH=$PATH:$HOME/.rvm/src/rvm/bin # Add RVM to PATH for scripting
 
 # for rvm
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+
+# for hub
+function git(){hub "$@"}
+alias git=hub
