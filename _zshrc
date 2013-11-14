@@ -383,7 +383,7 @@ unset LD_LIBRARY_PATH
 unset DYLD_LIBRARY_PATH
 
 # for node
-[[ -s /Users/katsuhito384/.nvm/nvm.sh ]] && . /Users/katsuhito384/.nvm/nvm.sh
+[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
 nvm use default
 npm_dir=${NVM_PATH}_modules
 export NODE_PATH=$npm_dir
