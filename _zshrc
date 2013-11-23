@@ -362,11 +362,11 @@ export PATH=$PATH:~/Desktop/Desktop2/manabo_Inc/Project/mana.bo/misc/AWS-Elastic
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # for Amazon RDSCLI
-export AWS_RDS_HOME=/usr/local/rds-tools.current
+#  export AWS_RDS_HOME=/usr/local/rds-tools.current
 export JAVA_HOME=/Library/Java/Home
 export PATH=${PATH}:${JAVA_HOME}/bin:${AWS_RDS_HOME}/bin
 #実行権限を追加する
-chmod +x ${AWS_RDS_HOME}
+#  chmod +x ${AWS_RDS_HOME}
 
 # for RSense
 export RSENSE_HOME=/usr/local/Cellar/rsense/0.3/libexec
