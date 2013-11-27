@@ -33,6 +33,7 @@ alias bs='bundle show'
 alias bu='bundle update'
 
 #for git
+alias g='git'
 alias gst='git status'
 alias gtg='git tag'
 alias gtga='git tag -a'
