@@ -1,0 +1,31 @@
+[user]
+  name = Katsuhito Mihashi
+  email = katsuhito384@gmail.com
+[color]
+  status      = auto
+  diff        = auto
+  branch      = auto
+  interactive = auto
+  grep        = auto
+[core]
+  autocrlf = input                 # CRLFを自動変換
+  editor = vim
+  quotepath = false
+[merge]
+  tool = vimdiff
+  ff = false
+[branch]
+  autosetuprebase = always
+[pull]
+  rebase = true
+[pr]
+  head-owner = katsuhito384
+[alias]
+  pr = !hub pull-request -h `git config pr.head-owner`:`git rev-parse --abbrev-ref HEAD` -b `git config pr.base-owner`:`git config pr.base-branch`
+[http]
+  sslVerify = false
+[tig "bind"]
+  generic = g move-first-line
+  generic = G move-last-line
+  generic = ^F move-page-down
+  generic = ^B move-page-up
